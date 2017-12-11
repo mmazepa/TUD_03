@@ -1,4 +1,4 @@
-package com.example.shdemo.service;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.shdemo.domain.Car;
-import com.example.shdemo.domain.Person;
+import domain.Car;
+import domain.Person;
 
 @Component
 @Transactional
@@ -25,18 +25,18 @@ public class SellingMangerHibernateImpl implements SellingManager {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	
+
 	@Override
 	public void addClient(Person person) {
 		person.setId(null);
 		sessionFactory.getCurrentSession().persist(person);
 	}
-	
+
 	@Override
 	public void deleteClient(Person person) {
 		person = (Person) sessionFactory.getCurrentSession().get(Person.class,
 				person.getId());
-		
+
 		// lazy loading here
 		for (Car car : person.getCars()) {
 			car.setSold(false);

@@ -1,4 +1,4 @@
-package com.example.shdemo.domain;
+package domain;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@NamedQueries({ 
+@NamedQueries({
 	@NamedQuery(name = "person.all", query = "Select p from Person p"),
 	@NamedQuery(name = "person.byPin", query = "Select p from Person p where p.pin = :pin")
 })
@@ -40,7 +40,7 @@ public class Person {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}

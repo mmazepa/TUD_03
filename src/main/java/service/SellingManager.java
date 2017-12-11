@@ -1,17 +1,17 @@
-package com.example.shdemo.service;
+package service;
 
 import java.util.List;
 
-import com.example.shdemo.domain.Car;
-import com.example.shdemo.domain.Person;
+import domain.Car;
+import domain.Person;
 
 public interface SellingManager {
-	
+
 	void addClient(Person person);
 	List<Person> getAllClients();
 	void deleteClient(Person person);
 	Person findClientByPin(String pin);
-	
+
 	Long addNewCar(Car car);
 	List<Car> getAvailableCars();
 	void disposeCar(Person person, Car car);
