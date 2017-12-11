@@ -30,11 +30,17 @@ public class SellingManagerTest {
 	private final String NAME_2 = "Lolek";
 	private final String PIN_2 = "4321";
 
+  private final String NAME_3 = "Mariusz";
+  private final String PIN_3 = "7777";
+
 	private final String MODEL_1 = "126p";
 	private final String MAKE_1 = "Fiat";
 
 	private final String MODEL_2 = "Mondeo";
 	private final String MAKE_2 = "Ford";
+
+  private final String MODEL_3 = "Rio";
+  private final String MAKE_3 = "Kia";
 
 	@Test
 	public void addClientCheck() {
@@ -106,9 +112,19 @@ public class SellingManagerTest {
 		assertEquals(MODEL_2, ownedCars.get(0).getModel());
 	}
 
-	// @Test -
+	@Test
 	public void disposeCarCheck() {
-		// Do it yourself
+
+		Person person = new Person();
+    person.setFirstName(NAME_3);
+    person.setPin(PIN_3);
+
+    Car car = new Car();
+    car.setMake(MAKE_3);
+    car.setModel(MODEL_3);
+
+    //sellCar(person.getId(), car.getId());
+
 	}
 
 }
